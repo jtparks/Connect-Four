@@ -8,8 +8,9 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
+//app.use(bodyParser.json());
 
-app.engine('handlebars', exphbrs();
+//app.engine('handlebars', exphbrs());
 
 app.set('view engine', 'handlebars');
 
