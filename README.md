@@ -27,4 +27,8 @@ ft. Justin Parks, Alison Jones, Arnav Bhutani, and Justin Campbell
 	create all but the game itself - make a div that has a graphic, but thats it
 	
 
+#### Checkers?
 
+	Able to use CSS shapes for the pieces, so it's easier to implement
+	Relatively simple rules
+	Back end data store could be numbers of wins for a user?
