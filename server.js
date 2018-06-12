@@ -2,13 +2,15 @@
 var path = require('path');
 var express = require('express');
 var exphbrs = require('express-handlebars');
+var bodyParser = require('body-parser');
 var app = express();
 
 var port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
+//app.use(bodyParser.json());
 
-app.engine('handlebars', exphbrs();
+//app.engine('handlebars', exphbrs());
 
 app.set('view engine', 'handlebars');
 
