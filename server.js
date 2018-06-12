@@ -8,25 +8,27 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
+
 //app.use(bodyParser.json());
 
-//app.engine('handlebars', exphbrs());
+app.engine('handlebars', exphbrs({defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');
 
 app.get('/', function(req, res) {
-  res.status(200).render('', )
+  res.status(200).render('gamepage');
 });
 
-app.get('', function(req, res, next) {
-});
+//app.get('', function(req, res, next) {
+//});
 
 
-app.get('/public/*', function (req, res) {
+/*app.get('/public/*', function (req, res) {
   res.status(200).sendFile(path.join(__dirname + 'public'));
-});
+});*/
 
 app.get('*', function(req, res){
+  res.render('404');
 });
 
 app.listen(port, function () {
