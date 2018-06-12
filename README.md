@@ -13,17 +13,18 @@ ft. Justin Parks, Alison Jones, Arnav Bhutani, and Justin Campbell
 
 #### Hangman?
 
-	    Page that contains title
-		    Subpage that takes user-generated words and adds to a database, 
-		    uses a random one later upon initialization
+	Page that contains title
+		Subpage that takes user-generated words and adds to a database, 
+		uses a random one later upon initialization
 		
 
 
 #### Arcade game(s)?
 		
-    	High Scores saved on the back end
-    	Able to implement a number of games (or backup games)
+    High Scores saved on the back end
+    Able to implement a number of games (or backup games)
 
-	    create all but the game itself - make a div that has a graphic, but thats it
+	create all but the game itself - make a div that has a graphic, but thats it
 	
+
 
