@@ -32,3 +32,10 @@ ft. Justin Parks, Alison Jones, Arnav Bhutani, and Justin Campbell
 	Able to use CSS shapes for the pieces, so it's easier to implement
 	Relatively simple rules
 	Back end data store could be numbers of wins for a user?
+
+
+### Connect Four?
+	
+	Click and drop rules for pieces
+	CSS for the "game board"
+	Names of who is playing could be stored
