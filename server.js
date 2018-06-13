@@ -3,7 +3,18 @@ var path = require('path');
 var express = require('express');
 var exphbrs = require('express-handlebars');
 var bodyParser = require('body-parser');
+var MongoClient=require('mongodb').MongoClient;
 var app = express();
+
+var mongoHost=process.env.MONGO_HOST;
+var mongoPort=process.env.MONGO_PORT || '27017' ;
+var mongoUsername='Bhutania';
+var mongoPassword='asdfgh1';
+var mongoDMName=process.env.MONGO_DB_NAME;
+
+var mongoURL="mongodb://<dbuser>:<dbpassword>@ds036079.mlab.com:36079/thecorrectteam";
+
+var mongoDB=null;
 
 var port = process.env.PORT || 3000;
 
