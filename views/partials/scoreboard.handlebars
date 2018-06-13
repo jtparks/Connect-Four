@@ -1,7 +1,14 @@
-<div class = "scoreBoard">
-                <h1 class = "title" >Top Scores:</h1>
-                <h2 class = "playerTitle" >Player</h2>
-                <h2 class = "wins" >Wins</h2>
-                <p class = "player" >Player Here</p>
-                <p class = "score" >Score Here</p>
-</div>
+<article class="thePeople">
+	<div class="singlePerson">
+		{{#each people}}
+		    {{>people}}
+		{{/each}}
+	</div>
+
+	<div class="singleScore">
+		{{#each scores}}
+			{{>scores}}
+		{{/each}}
+	</div>
+
+</article>
