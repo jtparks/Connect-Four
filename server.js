@@ -9,14 +9,16 @@ var MongoClient=require('mongodb').MongoClient;
 var app = express();
 
 var mongoHost='classmongo.engr.oregonstate.edu';
-var mongoPort= process.env.MONGO_PORT || '37691' ;
-var mongoUsername='cs290_bhutania';
+var mongoPort= process.env.MONGO_PORT || '27017' ;
+var mongoUser='cs290_bhutania';
 var mongoPassword='cs290_bhutania';
-var mongoDBName=process.env.MONGO_DB_NAME;
+var mongoDBName='cs290_bhutania';
 
 //var mongoURL = "mongo ds036079.mlab.com:36079/thecorrectteam -u bhutania -p asdfgh1"
 
-var mongoURL="mongodb://" + mongoUsername + ":" + mongoPassword + "@" + "ds036079.mlab.com:36079/thecorrectteam";
+
+var mongoURL='mongodb://' + mongoUser + ':' + mongoPassword + '@' +
+mongoHost + ':' + mongoPort + '/' + mongoDBName;
 
 var mongoDB=null;
 
