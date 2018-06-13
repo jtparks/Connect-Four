@@ -6,17 +6,43 @@
     height: 200px;
     background-color: lavender;
 }
+
+.site-title 
+{
+    font-weight: 400;
+    text-align: center;
+    font-size: 30px;
+}
+
+a 
+{
+text-decoration: none;
+color: #000000;
+}
+
+a:hover
+{
+cursor: pointer;
+color: #8f8c8a;
+}
+
+.newgame
+{
+}
+
 .body
 {
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     color: white;
 }
+
 .gameBoard 
 {
     margin: 40px auto 0;
     width: 500px;
     height: 375px;
 }
+
 .gameBoard button
 {
     width: 50px;
@@ -28,15 +54,15 @@
     background: lightgrey;
 }
 
-  button.red {
+button.red {
     background: rgb(136, 0, 0);
     border-color: darkred;
-  }
+}
   
-  button.black {
+button.black {
     background: rgb(17, 17, 17);
     border-color: rgb(0, 0, 0);
-  }
+}
 
 .divider
 {
@@ -46,6 +72,7 @@
     height: 4px;
     border-radius: 4px;
 }
+
 .scoreBoard
 {
     margin: 40px auto 0;
@@ -57,28 +84,33 @@
     border-color: darkgrey;
     background-color: lightgrey;
 }
+
 .scoreBoard .title
 {
     padding-left: 50px;
     float: center;
     padding-top: 30px;
 }
+
 .scoreboard .playerTitle
 {
     float: left;
     padding-left: 50px;
     
 }
+
 .scoreboard .wins
 {
     float: right;
     padding-right: 50px;
 }
+
 .scoreBoard .player
 {
     float: left;
     padding-left: 50px;
 }
+
 .scoreBoard .score
 {
     float: right;
