@@ -1,4 +1,4 @@
-function storePerson(personName, numberOfWins){
+/*function storePerson(personName, numberOfWins){
 	var request= new XMLHttpRequest();
 	var requestURL= "/data";
 
@@ -18,6 +18,6 @@ function storePerson(personName, numberOfWins){
 	request.setRequestHeader('Content-Type', 'application/json');
 	request.send(requestBody);
 }
-
+*/
 
 
