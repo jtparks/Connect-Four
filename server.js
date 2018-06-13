@@ -22,7 +22,6 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
-
 app.engine('handlebars', exphbrs({defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');
@@ -31,11 +30,11 @@ app.get('/', function(req, res) {
   res.status(200).render('gamepage');
 });
 
-//app.get('', function(req, res, next) {
-//});
+/*app.get('', function(req, res, next) {
+});
 
 
-/*app.get('/public/*', function (req, res) {
+app.get('/public/*', function (req, res) {
   res.status(200).sendFile(path.join(__dirname + 'public'));
 });*/
 
