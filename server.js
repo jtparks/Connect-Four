@@ -10,12 +10,14 @@ var MongoClient=require('mongodb').MongoClient;
 var app = express();
 
 var mongoHost=process.env.MONGO_HOST;
-var mongoPort=process.env.MONGO_PORT || '27017' ;
+var mongoPort= process.env.MONGO_PORT || '37691' ;
 var mongoUsername='Bhutania';
 var mongoPassword='asdfgh1';
-var mongoDMName=process.env.MONGO_DB_NAME;
+var mongoDBName=process.env.MONGO_DB_NAME;
 
-var mongoURL="mongodb://<dbuser>:<dbpassword>@ds036079.mlab.com:36079/thecorrectteam";
+//var mongoURL = "mongo ds036079.mlab.com:36079/thecorrectteam -u bhutania -p asdfgh1"
+
+var mongoURL="mongodb://" + mongoUsername + ":" + mongoPassword + "@" + "ds036079.mlab.com:36079/thecorrectteam";
 
 var mongoDB=null;
 
