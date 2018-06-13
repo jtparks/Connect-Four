@@ -50,6 +50,41 @@ app.get('/data', function(req, res, next) {
   })
 });
 
+app.post('/data/:rank', function(req, res, next){
+	var data=req.params.person.toLowerCase();
+	if(req.rank && req.rank.name &&req.rank.score){
+		var leaderboard={
+			name: req.rank.name,
+			score: req.rank.score
+		};
+		var dataCollection=mongoDB.collection('data');
+		dataCollection.updateOne(
+			{rank: rank},
+			{person: person},
+			{score: score},
+			function(err, result){
+				if(err){
+					res.status(500).send("error inserting into db.");
+				}
+				else{
+					if(result.matchedCount>0){
+					res.status(200).endl();
+					}	
+					else{
+						next();
+					}
+				}
+		
+			}
+		);
+	}
+	else{
+		res.status(400).send("Error with JSON")
+		
+	}
+
+});
+
 app.get('/', function(req, res) {
   res.status(200).render('gamepage');
 });
@@ -57,8 +92,6 @@ app.get('/', function(req, res) {
 app.get('*', function(req, res){
   res.render('404');
 });
-
-
 
 MongoClient.connect(mongoURL, function(err, client){
 	if(err){
