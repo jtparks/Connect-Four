@@ -7,9 +7,12 @@ var app = express();
 
 var port = process.env.PORT || 3000;
 
+app.use(bodyParser.json());
+
+app.post('/data')
+
 app.use(express.static('public'));
 
-//app.use(bodyParser.json());
 
 app.engine('handlebars', exphbrs({defaultLayout: 'main'}));
 
