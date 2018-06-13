@@ -29,7 +29,7 @@ app.engine('handlebars', exphbrs({defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');
 
-app.get('/data', function(req, res, next) {
+app.get('/data/rank/scores', function(req, res, next) {
   var name = db.collection('name');
   var nameCursor = collection.find({});
   var highscores = db.collection('highscores');
@@ -49,6 +49,12 @@ app.get('/data', function(req, res, next) {
     }
   })
 });
+
+app.post('/data/addData', function(req, res, next) 
+{
+  var data = req.params.data.toLowerCase();
+  
+})
 
 app.get('/', function(req, res) {
   res.status(200).render('gamepage');
