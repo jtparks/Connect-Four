@@ -43,7 +43,7 @@ app.get('/data', function(req, res, next) {
     else 
     {
       res.status(200).render('scoreboard', {
-        people: name
+        people: name,
         score: highscores
        });
     }
