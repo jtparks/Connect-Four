@@ -42,7 +42,7 @@ app.get('*', function(req, res){
   res.render('404');
 });
 
-MongoCLient.connect(mongoURL, function(err, client){
+MongoClient.connect(mongoURL, function(err, client){
 	if(err){
 		throw err;
 	}
