@@ -14,9 +14,6 @@ var mongoUser='cs290_bhutania';
 var mongoPassword='cs290_bhutania';
 var mongoDBName='cs290_bhutania';
 
-//var mongoURL = "mongo ds036079.mlab.com:36079/thecorrectteam -u bhutania -p asdfgh1"
-
-
 var mongoURL='mongodb://' + mongoUser + ':' + mongoPassword + '@' +
 mongoHost + ':' + mongoPort + '/' + mongoDBName;
 
