@@ -43,6 +43,12 @@ app.get('*', function(req, res){
   res.render('404');
 });
 
-app.listen(port, function () {
-  console.log("== Server is listening on port", port);
-});
+MongoCLient.connect(mongoURL, function(err, client){
+	if(err){
+		throw err;
+	}
+	mongoDB=client.db(mongoDBName);
+	app.listen(port, function () {
+	  console.log("== Server is listening on port", port);
+	});
+})
