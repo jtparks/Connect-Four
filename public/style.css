@@ -2,7 +2,9 @@
     margin: 0;
     font-size: 40px;
     background-color: #ff7000;
-    color: #000000
+    color: #000000;
+    padding: 5px;
+    font-weight: 400;
 }
 
 .navbar {
