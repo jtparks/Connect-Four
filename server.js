@@ -29,21 +29,36 @@ app.engine('handlebars', exphbrs({defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');
 
+app.get('/data', function(req, res, next) {
+  var name = db.collection('name');
+  var nameCursor = collection.find({});
+  var highscores = db.collection('highscores');
+  var scoreCursor = collection.find({});
+  scoreCursor.toArray(function(err, scores) 
+  {
+    if (err)
+    {
+      res.status(500).send('Error fetching highscores from Database');
+    }
+    else 
+    {
+      res.status(200).render('scoreboard', {
+        people: name
+        score: highscores
+       });
+    }
+  })
+});
+
 app.get('/', function(req, res) {
   res.status(200).render('gamepage');
 });
 
-/*app.get('', function(req, res, next) {
-});
-
-
-app.get('/public/*', function (req, res) {
-  res.status(200).sendFile(path.join(__dirname + 'public'));
-});*/
-
 app.get('*', function(req, res){
   res.render('404');
 });
+
+
 
 MongoClient.connect(mongoURL, function(err, client){
 	if(err){
