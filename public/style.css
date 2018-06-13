@@ -135,3 +135,17 @@ button.black {
     float: right;
     padding-right: 50px;
 }
+
+.errtag 
+{
+    font-weight: 400;
+    font-family: Roboto, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 50px;
+}
+
+.errtext
+{
+    font-family: Roboto, Helvetica, sans-serif;
+    text-align: center;
+}
