@@ -81,7 +81,11 @@ $(document).ready(function()
             $(".player").text(currentPlayerName());
             //No more pieces can be placed.
             $(".gameBoard button").unbind("click");
+
+            //store winner
             winningPlayer = currentPlayerName();
+            storeWinnerData(winningPlayer);
+
             return;
         }
         //Is the board full?
@@ -463,4 +467,13 @@ function dWin()
     }
 
     return false;
+}
+
+
+//====================================ENDGAME STORING==============================//
+
+//function that grabs winner name, winner is the string name of the winning player.
+function storeWinnerData(winner)
+{
+    
 }
