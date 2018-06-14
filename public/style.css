@@ -162,6 +162,11 @@ button.black {
     padding-left: 50px;
 }
 
+.playername
+{
+    padding-left: 50px;
+}
+
 .score
 {
     float: right;
