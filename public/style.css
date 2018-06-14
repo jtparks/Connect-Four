@@ -143,6 +143,18 @@ button.black {
     display: inline-block;
 }
 
+.item1
+{
+    float: left;
+    padding-left: 60px;
+}
+
+.item2
+{
+    float: right;
+    padding-right: 70px;
+}
+
 .playerTitle
 {
     float: left;
@@ -154,12 +166,6 @@ button.black {
 {
     float: right;
     padding-right: 50px;
-}
-
-.player
-{
-    float: left;
-    padding-left: 50px;
 }
 
 .playername
