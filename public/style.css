@@ -29,10 +29,9 @@
 
 a 
 {
-    font-size: 15px;
+    font: 15px Roboto, Helvetica, sans-serif;
     text-decoration: none;
     color: #000000;
-    font-family: Roboto, Helvetica, sans-serif;
 }
 
 a:hover
@@ -82,10 +81,8 @@ a:hover
 {
     width: 50px;
     height: 50px;
-    border: solid;
     border-radius: 50%;
-    border: 3px;
-    border-color: darkgrey;
+    border: 3px solid darkgray;
     background: lightgrey;
 }
 
@@ -114,10 +111,8 @@ button.black {
     margin: 40px auto 0;
     width: 400px;
     height: 600px;
-    border: solid;
+    border: 3px solid darkgray;
     border-radius: 15px;
-    border-width: 3px;
-    border-color: darkgrey;
     background-color: lightgrey;
 }
 
@@ -126,15 +121,15 @@ button.black {
     padding-top: 30px;
     text-align: center;
     margin-top: -5px;
+    font-weight: 600; 
     font-family: Roboto, Helvetica, sans-serif;
-    font-weight: 600;
 }
 
 .boardsec
 {
     display: inline;
+    font-weight: 400; 
     font-family: Roboto, Helvetica, sans-serif;
-    font-weight: 400;
 }
 
 .playerTitle
@@ -164,10 +159,8 @@ button.black {
 
 .errtag 
 {
-    font-weight: 400;
-    font-family: Roboto, Helvetica, sans-serif;
+    font-family: 400 50px Roboto, Helvetica, sans-serif;
     text-align: center;
-    font-size: 50px;
 }
 
 .errtext

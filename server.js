@@ -70,7 +70,7 @@ app.get('/', function(req, res) {
 	res.status(200).render('gamepage');	
 
 });
-
+/*
 app.get('/ranks', function(req, res, next) {
 	//  var name = mongoDB.collection('ranks');
 	//  var nameCursor = collection.find({});
