@@ -76,8 +76,8 @@ app.get('/', function(req, res) {
 			res.status(500).send("Error fetching people data");
 		}
 		else if(list.length>0) {
-			console.log(list[2]);
-			res.status(200).render('gamepage', list[2]);
+			console.log(list[0]);
+			res.status(200).render('gamepage', list[0]);
 		}
 		else{
 			next();			
