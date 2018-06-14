@@ -30,7 +30,7 @@ app.engine('handlebars', exphbrs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 
-/*
+
 app.post('/data/:rank', function(req, res, next){
 	var data=req.params.person.toLowerCase();
 	if(req.rank && req.rank.name &&req.rank.score){
@@ -65,10 +65,24 @@ app.post('/data/:rank', function(req, res, next){
 	}
 
 });
-*/
-app.get('/', function(req, res) {
-	res.status(200).render('gamepage');	
 
+app.get('/', function(req, res) {
+	//res.status(200).render('gamepage');	
+	var people = db.collection('random');
+	var peopleCursor = people.find({});
+	peopleCursor.toArray(function(err, list)
+	{
+		if(err){
+			res.status(500).send("Error fetching people data");
+		}
+		else if(list.length>0) {
+			
+			res.status(200).render('gamepage', list[0]);
+		}
+		else{
+			next();			
+		}	
+	});
 });
 /*
 app.get('/ranks', function(req, res, next) {
