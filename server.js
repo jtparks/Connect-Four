@@ -29,13 +29,8 @@ app.engine('handlebars', exphbrs({defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');
 
-<<<<<<< HEAD
-app.get('/data/rank/scores', function(req, res, next) {
-  var name = db.collection('name');
-=======
 app.get('/data', function(req, res, next) {
   var name = mongoDB.collection('name');
->>>>>>> f2494e0e2adca6fd26ea36a49431cd2c647400de
   var nameCursor = collection.find({});
   var highscores = mongoDB.collection('highscores');
   var scoreCursor = collection.find({});
