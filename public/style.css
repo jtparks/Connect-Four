@@ -121,13 +121,38 @@ button.black {
     padding-top: 30px;
     text-align: center;
     margin-top: -5px;
-    font: 600 Roboto, Helvetica, sans-serif;
+    font-weight: 600; 
+    font-family: Roboto, Helvetica, sans-serif;
 }
 
 .boardsec
 {
+    display: inline-flex;
+    font-weight: 400;
+    font-family: Roboto, Helvetica, sans-serif;
+}
+
+.headers 
+{
     display: inline;
-    font: 400 Roboto, Helvetica, sans-serif;
+}
+
+.info
+{
+    width: 400px;
+    display: inline-block;
+}
+
+.item1
+{
+    float: left;
+    padding-left: 60px;
+}
+
+.item2
+{
+    float: right;
+    padding-right: 70px;
 }
 
 .playerTitle
@@ -137,19 +162,18 @@ button.black {
     
 }
 
-.winsTitle
+.wins
 {
     float: right;
     padding-right: 50px;
 }
 
-.scoreBoard .player
+.playername
 {
-    float: left;
     padding-left: 50px;
 }
 
-.scoreBoard .score
+.score
 {
     float: right;
     padding-right: 50px;

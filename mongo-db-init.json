@@ -1,39 +1,26 @@
-[
+[		
 	{
-		rank: 1
-			[
-			{
-				person: Luke 
-				score: 3
-			)
-			]
-		rank: 2
-			[
-			(
-				person: Justin
-				score: 5
-			)
-			]
-		rank: 3
-			[
-			(
-				person: Bill
-				score: 2
-			)
-			]
-		rank: 4
-			[
-			(
-				person: Jeff
-				score: 1
-			)
-			]
-		rank: 5
-			[
-			(
-				person: Greg
-				score 10
-			)
-			]
-	}
+		"person": "Luke", 
+		"score": "3"
+	},
+			
+	{
+		"person": "Justin",
+		"score": "5"
+	},
+		
+	{
+		"person": "Bill",
+		"score": "2"
+	},
+						
+	{
+		"person": "Jeff",
+		"score": "1"
+	},
+			
+	{
+		"person": "Greg",
+		"score": "10"
+	}	
 ]
