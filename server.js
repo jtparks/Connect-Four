@@ -31,25 +31,24 @@ app.set('view engine', 'handlebars');
 
 
 
-app.post('/data/:rank', function(req, res, next){
-	var data=req.params.person.toLowerCase();
+app.post('/addScore', function(req, res, next){
+	var people=req.params.person.toLowerCase();
 	if(req.rank && req.rank.name &&req.rank.score){
-		var leaderboard={
+		/*var leaderboard={
 			name: req.rank.name,
 			score: req.rank.score
-		};
-		var dataCollection=mongoDB.collection('data');
-		dataCollection.updateOne(
-			{rank: rank},
+		};*/
+		var peopleCollection=mongoDB.collection('random');
+		peopleCollection.updateOne(
 			{person: person},
-			{score: score},
+			//{score: score},
 			function(err, result){
 				if(err){
 					res.status(500).send("error inserting into db.");
 				}
 				else{
 					if(result.matchedCount>0){
-					res.status(200).endl();
+						res.status(200).endl();
 					}	
 					else{
 						next();
