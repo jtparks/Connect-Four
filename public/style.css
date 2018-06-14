@@ -26,7 +26,7 @@
     padding-left: 10px;
     padding-bottom: 20px; 
     padding-top: 20px;
-    margin: 0px -8px 0px -8px;
+    margin: 0px -17px 0px -17px;
 }
 
 a 
@@ -187,7 +187,8 @@ button.black {
 
 .errtag 
 {
-    font-family: 400 50px Roboto, Helvetica, sans-serif;
+    font: 70px Roboto, Helvetica, sans-serif;
+    font-weight: 300;
     text-align: center;
 }
 
@@ -195,4 +196,7 @@ button.black {
 {
     font-family: Roboto, Helvetica, sans-serif;
     text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: -40px;
 }
