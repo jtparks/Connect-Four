@@ -3,7 +3,7 @@ var express = require('express');
 var exphbrs = require('express-handlebars');
 var bodyParser = require('body-parser');
 
-
+var stuff = null;
 
 var MongoClient=require('mongodb').MongoClient;
 var app = express();
@@ -19,7 +19,7 @@ mongoHost + ':' + mongoPort + '/' + mongoDBName;
 
 var mongoDB=null;
 
-var port = process.env.PORT || 8001;
+var port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
@@ -29,27 +29,8 @@ app.engine('handlebars', exphbrs({defaultLayout: 'main'}));
 
 app.set('view engine', 'handlebars');
 
-app.get('/data', function(req, res, next) {
-  var name = mongoDB.collection('name');
-  var nameCursor = collection.find({});
-  var highscores = mongoDB.collection('highscores');
-  var scoreCursor = collection.find({});
-  name.toArray(function(err, scores) 
-  {
-    if (err)
-    {
-      res.status(500).send('Error fetching highscores from Database');
-    }
-    else 
-    {
-      res.status(200).render('scoreboard', {
-        people: name,
-        scores: highscores
-       });
-    }
-  })
-});
 
+/*
 app.post('/data/:rank', function(req, res, next){
 	var data=req.params.person.toLowerCase();
 	if(req.rank && req.rank.name &&req.rank.score){
@@ -84,10 +65,59 @@ app.post('/data/:rank', function(req, res, next){
 	}
 
 });
-
+*/
 app.get('/', function(req, res) {
-  res.status(200).render('gamepage');
+	res.status(200).render('gamepage');	
+
 });
+
+app.get('/ranks', function(req, res, next) {
+	//  var name = mongoDB.collection('ranks');
+	//  var nameCursor = collection.find({});
+	var person = {
+		people: req.body.people,
+		score: req.body.scores
+	};
+		var dataBase = mongoDB.collection('test');
+		dataBase.updateOne(
+			{$push: {person: person}}
+		)
+		function(err, result)
+		{
+			if (err)
+			{
+			res.status(500).send("Error inserting person into DB");
+			}
+
+			else{
+				if(result.matchedCount>0){
+					res.status(200).end();
+				}
+				else{
+					next();					
+				}									
+			}
+		}
+	});
+	//  var scoreCursor = collection.find({});
+/*	app.get('/ranks/:person', function(req, res, next) {
+		var person = req.params.person.toLowerCase();
+		var peopleCollection = mongoDB.collection();
+		peopleCollection.find({person: name}).toArray(function(err, personOne) {
+			if(err){
+				res.status(500).send("Error fetching people from DB")				
+			}
+			else if(personOne.length > 0)
+			{
+				res.status(200).render(''{
+					person: personOne
+				});
+			}				
+			else {
+				next();
+			}
+		});					
+	}); */
 
 app.get('*', function(req, res){
   res.render('404');
