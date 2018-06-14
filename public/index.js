@@ -12,6 +12,8 @@ var stuff =
     winner: " is the Winner! ",
 };
 
+var winningPlayer = "";
+
 var currentPlayer = stuff.firstTurn;
 
 var gameBoard = [[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0]];
@@ -79,6 +81,7 @@ $(document).ready(function()
             $(".player").text(currentPlayerName());
             //No more pieces can be placed.
             $(".gameBoard button").unbind("click");
+            winningPlayer = currentPlayerName();
             return;
         }
         //Is the board full?
@@ -88,6 +91,7 @@ $(document).ready(function()
             $(".message").text(stuff.catsGameMes);
             //No more pieces can be placed.
             $(".gameBoard button").unbind("click");
+            winningPlayer = "";
             return;
         }
         //switch current player.
