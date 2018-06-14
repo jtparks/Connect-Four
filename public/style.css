@@ -121,13 +121,15 @@ button.black {
     padding-top: 30px;
     text-align: center;
     margin-top: -5px;
-    font: 600 Roboto, Helvetica, sans-serif;
+    font-weight: 600; 
+    font-family: Roboto, Helvetica, sans-serif;
 }
 
 .boardsec
 {
     display: inline;
-    font: 400 Roboto, Helvetica, sans-serif;
+    font-weight: 400; 
+    font-family: Roboto, Helvetica, sans-serif;
 }
 
 .playerTitle
