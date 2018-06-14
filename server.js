@@ -19,7 +19,7 @@ mongoHost + ':' + mongoPort + '/' + mongoDBName;
 
 var mongoDB=null;
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8001;
 
 app.use(bodyParser.json());
 
@@ -30,11 +30,11 @@ app.engine('handlebars', exphbrs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 app.get('/data', function(req, res, next) {
-  var name = db.collection('name');
+  var name = mongoDB.collection('name');
   var nameCursor = collection.find({});
-  var highscores = db.collection('highscores');
+  var highscores = mongoDB.collection('highscores');
   var scoreCursor = collection.find({});
-  scoreCursor.toArray(function(err, scores) 
+  name.toArray(function(err, scores) 
   {
     if (err)
     {
