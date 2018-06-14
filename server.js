@@ -35,16 +35,19 @@ app.set('view engine', 'handlebars');
 
 app.post('/addScore', function(req, res, next)
 {
-	console.log(req.body);
 	var people=req.body.person;
-	console.log(people);
+	if (people === null)
+		{
+			people = "Guest";
+		}
+		console.log(people);
 	if(req.body)
 	{
 		var peopleCollection=mongoDB.collection('random');
 		peopleCollection.find({person: people}).toArray(function(err, list)
 		{
-		console.log(list);
-			if (list)
+		console.log(list.people);
+			if (list.people)
 			{
 				var scores = list[0].score;
 				scores++;
@@ -73,14 +76,13 @@ app.post('/addScore', function(req, res, next)
 						}
 					});
 			}
-				else 
+				else
 				{
-					peopleCollection.update(
-						{person: people},
-						{$push : {score: 1}},
+					peopleCollection.insert(
+						{person: people, score: 1},
 						function(err, result) 
 						{
-							console.log(err);
+							console.log("tuffff");
 							if(err)
 							{
 								console.log("tuff2");
@@ -88,7 +90,7 @@ app.post('/addScore', function(req, res, next)
 							}
 							else
 							{
-									res.status(200).end();
+								res.status(200).end();
 							}
 						}
 					);
@@ -98,7 +100,6 @@ app.post('/addScore', function(req, res, next)
 	else
 	{
 		res.status(400).send("Error with JSON")
-		
 	}
 
 });
