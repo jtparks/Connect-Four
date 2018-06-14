@@ -127,9 +127,20 @@ button.black {
 
 .boardsec
 {
-    display: inline;
-    font-weight: 400; 
+    display: inline-flex;
+    font-weight: 400;
     font-family: Roboto, Helvetica, sans-serif;
+}
+
+.headers 
+{
+    display: inline;
+}
+
+.info
+{
+    width: 400px;
+    display: inline-block;
 }
 
 .playerTitle
@@ -139,19 +150,19 @@ button.black {
     
 }
 
-.winsTitle
+.wins
 {
     float: right;
     padding-right: 50px;
 }
 
-.scoreBoard .player
+.player
 {
     float: left;
     padding-left: 50px;
 }
 
-.scoreBoard .score
+.score
 {
     float: right;
     padding-right: 50px;
