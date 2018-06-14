@@ -40,14 +40,13 @@ app.post('/addScore', function(req, res, next)
 		{
 			people = "Guest";
 		}
-		console.log(people);
-	if(req.body)
+		if(req.body)
 	{
 		var peopleCollection=mongoDB.collection('random');
 		peopleCollection.find({person: people}).toArray(function(err, list)
 		{
-		console.log(list.people);
-			if (list.people)
+		console.log(list);
+			if (list)
 			{
 				var scores = list[0].score;
 				scores++;
@@ -76,10 +75,10 @@ app.post('/addScore', function(req, res, next)
 						}
 					});
 			}
-				else
+			else
 				{
 					peopleCollection.insert(
-						{person: people, score: 1},
+						{$push: {person: people, score: 1}},
 						function(err, result) 
 						{
 							console.log("tuffff");
