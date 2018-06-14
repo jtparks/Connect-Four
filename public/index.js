@@ -492,7 +492,6 @@ function storeWinnerData(winner)
         if(event.target.status===200){
             console.log("2");
         }
-        
         else{
             alert("Error");
         }
