@@ -476,4 +476,28 @@ function dWin()
 function storeWinnerData(winner)
 {
     
+   console.log("Start of func"); 
+    var request= new XMLHttpRequest();
+    var url="/addScore";
+    request.open("POST", url);
+
+
+    console.log("1");
+    var requestBody=JSON.stringify({
+        person: winner,
+        
+    });
+
+    request.addEventListener('load', function(event){
+        if(event.target.status===200){
+            console.log("2");
+        }
+        else{
+            alert("Error");
+        }
+    });
+    console.log(requestBody);
+    request.setRequestHeader('Content-Type','application/json')
+    request.send(requestBody);
+
 }

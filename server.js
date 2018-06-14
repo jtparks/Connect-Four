@@ -2,6 +2,8 @@ var path = require('path');
 var express = require('express');
 var exphbrs = require('express-handlebars');
 var bodyParser = require('body-parser');
+var handles = require('handlebars');
+var NumberInt= require('mongoose-int32');
 
 var stuff = null;
 
@@ -31,37 +33,72 @@ app.set('view engine', 'handlebars');
 
 
 
-app.post('/data/:rank', function(req, res, next){
-	var data=req.params.person.toLowerCase();
-	if(req.rank && req.rank.name &&req.rank.score){
-		var leaderboard={
-			name: req.rank.name,
-			score: req.rank.score
-		};
-		var dataCollection=mongoDB.collection('data');
-		dataCollection.updateOne(
-			{rank: rank},
-			{person: person},
-			{score: score},
-			function(err, result){
-				if(err){
-					res.status(500).send("error inserting into db.");
-				}
-				else{
-					if(result.matchedCount>0){
-					res.status(200).endl();
-					}	
-					else{
-						next();
-					}
-				}
-		
+app.post('/addScore', function(req, res, next)
+{
+	var people=req.body.person;
+	if (people === null)
+		{
+			people = "Guest";
+		}
+		if(req.body)
+	{
+		var peopleCollection=mongoDB.collection('random');
+		peopleCollection.find({person: people}).toArray(function(err, list)
+		{
+		console.log(list);
+			if (list)
+			{
+				var scores = list[0].score;
+				scores++;
+				peopleCollection.updateOne(
+					{person: people},
+					{$set: {score : scores}},
+					function(err, result)
+					{
+						console.log(err);
+						if(err)
+						{
+							console.log("stuff");
+							res.status(500).send("error inserting into db.");
+						}
+						else
+						{
+							console.log("not stuff");
+							if(result.matchedCount>0)
+							{
+								res.status(200).end();
+							}	
+							else
+							{
+								next();
+							}
+						}
+					});
 			}
-		);
+			else
+				{
+					peopleCollection.insert(
+						{$push: {person: people, score: 1}},
+						function(err, result) 
+						{
+							console.log("tuffff");
+							if(err)
+							{
+								console.log("tuff2");
+								res.status(500).send("error inserting into db.");
+							}
+							else
+							{
+								res.status(200).end();
+							}
+						}
+					);
+				}			
+		});
 	}
-	else{
+	else
+	{
 		res.status(400).send("Error with JSON")
-		
 	}
 
 });

@@ -1,26 +1,26 @@
 [		
 	{
 		"person": "Luke", 
-		"score": "3"
+		"score": "0"
 	},
 			
 	{
 		"person": "Justin",
-		"score": "5"
+		"score": "0"
 	},
 		
 	{
 		"person": "Bill",
-		"score": "2"
+		"score": "0"
 	},
 						
 	{
 		"person": "Jeff",
-		"score": "1"
+		"score": "0"
 	},
 			
 	{
 		"person": "Greg",
-		"score": "10"
-	}	
+		"score": "0"
+	}
 ]
