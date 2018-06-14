@@ -141,7 +141,7 @@ button.black {
 
 .info
 {
-    width: 200px;
+    width: 345px;
     display: inline-flex;
 }
 
@@ -151,14 +151,16 @@ button.black {
     padding-left: 50px;
     font-size: 20px;
     font-style: italic;
+    width: 75px;
 }
 
 .item2
 {
     float: right;
-    padding-left: 210px;
+    padding-left: 190px;
     font-size: 20px;
     font-style: italic;
+    width: 5px;
 }
 
 .playerTitle
