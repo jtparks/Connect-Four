@@ -75,13 +75,12 @@ app.get('/ranks', function(req, res, next) {
 	//  var name = mongoDB.collection('ranks');
 	//  var nameCursor = collection.find({});
 	var person = {
-		people: req.body.people,
-		score: req.body.scores
+			people: req.body.people,
+			score: req.body.scores
 	};
 		var dataBase = mongoDB.collection('test');
 		dataBase.updateOne(
-			{$push: {person: person}}
-		)
+			{$push: {person: person}},
 		function(err, result)
 		{
 			if (err)
@@ -89,19 +88,19 @@ app.get('/ranks', function(req, res, next) {
 			res.status(500).send("Error inserting person into DB");
 			}
 
-			else{
+			else {
 				if(result.matchedCount>0){
 					res.status(200).end();
 				}
 				else{
 					next();					
-				}									
+				}							
 			}
-		}
+		});
 	});
 	//  var scoreCursor = collection.find({});
 /*	app.get('/ranks/:person', function(req, res, next) {
-		var person = req.params.person.toLowerCase();
+		var person = req.params.person.toLowerCase();				
 		var peopleCollection = mongoDB.collection();
 		peopleCollection.find({person: name}).toArray(function(err, personOne) {
 			if(err){
@@ -114,7 +113,7 @@ app.get('/ranks', function(req, res, next) {
 				});
 			}				
 			else {
-				next();
+				next();				
 			}
 		});					
 	}); */

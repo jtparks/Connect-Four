@@ -4,7 +4,10 @@
   "description": "connect four implementation",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "startup": "ssh campbjus@access.engr.oregonstate.edu",
+    "mongo": "mongoimport --host classmongo.engr.oregonstate.edu --username cs290_bhutania --db cs290_bhutania --password cs290_bhutania --collection random --jsonArray mongo-db-init.json",
+    "prestart": "npm run startup, mongo"
   },
   "repository": {
     "type": "git",
