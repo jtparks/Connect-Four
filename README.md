@@ -1,11 +1,15 @@
-# final-project-the-correct-team
-final-project-the-correct-team created by GitHub Classroom
-
-## The Correct Team
+# The Correct Team
 ft. Justin Parks, Alison Jones, Arnav Bhutani, and Justin Campbell
 
+## Synopsis
+This is a website designed to play a two player game of Connect Four. It is implemented using standard HTML/CSS for the frontend and
+JavaScript, node.js, and mongoDB for the backend and database fetching and storing. Run it by typing ```node server.js``` and opening
+[localhost:3000] (localhost:3000)
 
-### Brainstorming:
+## Creation Purpose
+This project was created as a final submission for a Web Development class. 
+
+## Brainstorming:
 
     Something that uses back-end data storage
 
@@ -39,3 +43,11 @@ ft. Justin Parks, Alison Jones, Arnav Bhutani, and Justin Campbell
 	Click and drop rules for pieces
 	CSS for the "game board"
 	Names of who is playing could be stored
+	
+	
+## Known Bugs
+- Storage of Names and Scores does not work as intended. Either new names cannot be added to the list of names and scores, or a new name and score would be created every time, regardless if the same name is already on the board.
+- If a player wins who is not on the list already, the server crashed on an undefined 'score' read.
+- Scores only update on pressing the "New Game" button, rather than on "[player] is the winner"
+
+
