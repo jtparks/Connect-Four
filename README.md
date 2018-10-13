@@ -3,8 +3,9 @@ ft. Justin Parks, Alison Jones, Arnav Bhutani, and Justin Campbell
 
 ## Synopsis
 This is a website designed to play a two player game of Connect Four. It is implemented using standard HTML/CSS for the frontend and
-JavaScript, node.js, and mongoDB for the backend and database fetching and storing. Run it by typing ```node server.js``` and opening
-[localhost:3000] (localhost:3000)
+JavaScript, node.js, and mongoDB for the backend and database fetching and storing. Run it by entering ```node server.js``` in the
+terminal and opening
+```localhost:3000``` in your web browser.
 
 ## Creation Purpose
 This project was created as a final submission for a Web Development class. 
