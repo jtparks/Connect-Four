@@ -11,7 +11,7 @@ ft. Justin Parks, Alison Jones, Arnav Bhutani, and Justin Campbell
 
     Something that any user can use
 
-#### Hangman?
+##### Hangman?
 
 	Page that contains title
 		Subpage that takes user-generated words and adds to a database, 
@@ -19,7 +19,7 @@ ft. Justin Parks, Alison Jones, Arnav Bhutani, and Justin Campbell
 		
 
 
-#### Arcade game(s)?
+##### Arcade game(s)?
 		
     High Scores saved on the back end
     Able to implement a number of games (or backup games)
@@ -27,14 +27,14 @@ ft. Justin Parks, Alison Jones, Arnav Bhutani, and Justin Campbell
 	create all but the game itself - make a div that has a graphic, but thats it
 	
 
-#### Checkers?
+##### Checkers?
 
 	Able to use CSS shapes for the pieces, so it's easier to implement
 	Relatively simple rules
 	Back end data store could be numbers of wins for a user?
 
 
-### Connect Four?
+### Connect Four!
 	
 	Click and drop rules for pieces
 	CSS for the "game board"
